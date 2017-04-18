@@ -50,6 +50,7 @@
 static NSString *kSearchTerm = @"kSearchTerm";
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardDidShowNotification object:nil];
@@ -245,7 +246,7 @@ static NSString *kSearchTerm = @"kSearchTerm";
 
 - (void)copyMenuButtonPressed:(UIMenuController *)menuController {
     [self resignFirstResponder];
-    ELLCopyMenuItem *copyMenuItem = [menuController menuItems][0];
+    ELLCopyMenuItem *copyMenuItem = (ELLCopyMenuItem *)[menuController menuItems][0];
     if (copyMenuItem.IOKitText.length) {
         [UIPasteboard generalPasteboard].string = copyMenuItem.IOKitText;
     }
