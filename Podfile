@@ -1,4 +1,14 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
-pod 'KVOController'
+target 'IOKitBrowser' do
+  # use_frameworks!
+
+  # Pods for IOKitBrowser
+  pod 'KVOController'
+
+  target 'IOKitBrowserTests' do
+    inherit! :search_paths
+  end
+
+end
